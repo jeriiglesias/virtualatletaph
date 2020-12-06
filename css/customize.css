@@ -17,11 +17,14 @@ Footer
     -moz-osx-font-smoothing: grayscale;
     transform: translate(0, 0);
 }
-.list-icons .list-icon {
+.list-icons .list-content {
     margin-right: 0.4375rem;
     font-size: 1.125rem;
     line-height: 1.45;
-    color: #1c77ff;
+    color: #ff6d00;
+}
+.list-icons .list-content .fas, .list-icons .list-content .far {
+margin-right: 10px;
 }
 .footer-contacts.context-dark .list-icon {
     color: #fff;

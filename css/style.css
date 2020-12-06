@@ -197,8 +197,10 @@ section headers
 Slides
  */
 #gallery {
-  padding: 10px 0 30px;
-  overflow: hidden;
+    background: url(/img/banners/bg-running.jpg);
+    background-size: cover;
+    padding: 10px 0 30px;
+    overflow: hidden;
 }
 
 #gallery .owl-nav, #gallery .owl-dots {
@@ -213,6 +215,11 @@ Slides
 }
 .owl-carousel .owl-item img {
     display: none;
+}
+.owl-carousel .item img{
+    display: block;
+    width: 100%;
+    height: auto;
 }
 #gallery .owl-item.active.center img {
     display: block!important;
@@ -491,8 +498,9 @@ header .menu > li > a {
 }
 
 .footer ul.list {
-    margin: 0;
     line-height: 2rem;
+    list-style-type: none;
+    margin: 0;
 }
 .footer a {
     color: #ffa726;

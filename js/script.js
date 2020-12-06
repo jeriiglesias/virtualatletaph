@@ -91,36 +91,36 @@
   if (window.matchMedia("(max-width: 991px)").matches) {
     scrolltoOffset += 20;
   }
-  $(document).on('click', '.nav-menu a, #mobile-nav a, .scrollto', function(e) {
-    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      if (target.length) {
-        e.preventDefault();
+  // $(document).on('click', '.nav-menu a, #mobile-nav a, .scrollto', function(e) {
+  //   if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+  //     var target = $(this.hash);
+  //     if (target.length) {
+  //       e.preventDefault();
 
-        var scrollto = target.offset().top - scrolltoOffset;
+  //       var scrollto = target.offset().top - scrolltoOffset;
 
-        if ($(this).attr("href") == '#header') {
-          scrollto = 0;
-        }
+  //       if ($(this).attr("href") == '#header') {
+  //         scrollto = 0;
+  //       }
 
-        $('html, body').animate({
-          scrollTop: scrollto
-        }, 1500, 'easeInOutExpo');
+  //       $('html, body').animate({
+  //         scrollTop: scrollto
+  //       }, 1500, 'easeInOutExpo');
 
-        if ($(this).parents('.nav-menu').length) {
-          $('.nav-menu .menu-active').removeClass('menu-active');
-          $(this).closest('li').addClass('menu-active');
-        }
+  //       if ($(this).parents('.nav-menu').length) {
+  //         $('.nav-menu .menu-active').removeClass('menu-active');
+  //         $(this).closest('li').addClass('menu-active');
+  //       }
 
-        if ($('body').hasClass('mobile-nav-active')) {
-          $('body').removeClass('mobile-nav-active');
-          $('#mobile-nav-toggle i').toggleClass('fa-times fa-bars');
-          $('#mobile-body-overly').fadeOut();
-        }
-        return false;
-      }
-    }
-  });
+  //       if ($('body').hasClass('mobile-nav-active')) {
+  //         $('body').removeClass('mobile-nav-active');
+  //         $('#mobile-nav-toggle i').toggleClass('fa-times fa-bars');
+  //         $('#mobile-body-overly').fadeOut();
+  //       }
+  //       return false;
+  //     }
+  //   }
+  // });
 
   // Activate smooth scroll on page load with hash links in the url
   $(document).ready(function() {
@@ -139,35 +139,42 @@
   var nav_sections = $('section');
   var main_nav = $('.nav-menu, #mobile-nav');
 
-  $(window).on('scroll', function() {
-    var cur_pos = $(this).scrollTop() + 200;
+  // $(window).on('scroll', function() {
+  //   var cur_pos = $(this).scrollTop() + 200;
 
-    nav_sections.each(function() {
-      var top = $(this).offset().top,
-        bottom = top + $(this).outerHeight();
+  //   nav_sections.each(function() {
+  //     var top = $(this).offset().top,
+  //       bottom = top + $(this).outerHeight();
 
-      if (cur_pos >= top && cur_pos <= bottom) {
-        if (cur_pos <= bottom) {
-          main_nav.find('li').removeClass('menu-active');
-        }
-        main_nav.find('a[href="#' + $(this).attr('id') + '"]').parent('li').addClass('menu-active');
-      }
-      if (cur_pos < 300) {
-        $(".nav-menu li:first").addClass('menu-active');
-      }
-    });
-  });
+  //     if (cur_pos >= top && cur_pos <= bottom) {
+  //       if (cur_pos <= bottom) {
+  //         main_nav.find('li').removeClass('menu-active');
+  //       }
+  //       main_nav.find('a[href="#' + $(this).attr('id') + '"]').parent('li').addClass('menu-active');
+  //     }
+  //     if (cur_pos < 300) {
+  //       $(".nav-menu li:first").addClass('menu-active');
+  //     }
+  //   });
+  // });
 
   // Gallery carousel (uses the Owl Carousel library)
   $(".gallery-carousel").owlCarousel({
+    navigation: false,
+    slideSpeed: 300,
+    paginationSpeed: 400,
     autoplay: true,
     dots: true,
     loop: true,
     center: true,
     items:1,
+    itemsDesktop : false,
+    itemsDesktopSmall : false,
+    itemsTablet: false,
+    itemsMobile : false,
     checkVisible: false,
-    stagePadding: 20,
-    animateOut: 'fadeOut',
+    // stagePadding: 20,
+    // animateOut: 'fadeOut',
     // animateIn: 'fadeOut'
     // responsive: {
     //   0: {
